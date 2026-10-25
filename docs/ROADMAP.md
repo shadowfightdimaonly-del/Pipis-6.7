@@ -17,19 +17,21 @@
 - [x] Define JSONL dataset format
 - [x] Separate training and evaluation data
 - [x] Add Russian-language dialogue and technical examples
-- [ ] Expand the training set with diverse, high-quality examples
+- [x] Expand training examples across identity, technical accuracy, coding, evaluation, uncertainty, and response style
+- [x] Add explicit contrast examples for LoRA versus LSTM and adapter versus full model
+- [x] Preserve the existing evaluation file without adding its examples to training
+- [ ] Run the dataset validator in the target environment and inspect any duplicate/overlap warnings
 - [ ] Review examples for factual accuracy, style consistency, and accidental contradictions
-- [ ] Keep evaluation examples separate and avoid training on them
 
 ## Phase 3 — Pipis 0.x
 - [x] Train first adapter
 - [x] Compare Base and Adapter on initial prompts
 - [x] Record known failures in docs/EXPERIMENT_001.md
 - [ ] Build a repeatable evaluation rubric and score outputs
-- [ ] Run a second experiment only after dataset review
+- [ ] Run a second experiment only after dataset validation and review
 
 ## Phase 4 — Pipis 1.x+
-- [ ] Improve dataset quality
+- [ ] Improve dataset quality based on measured evaluation failures
 - [ ] Increase model size only after the small-model pipeline is reliable
 - [ ] Add tool-use experiments
 - [ ] Consider memory/retrieval outside the model
