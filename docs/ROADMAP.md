@@ -12,7 +12,10 @@
 - [x] Add Transformers + TRL + PEFT/QLoRA
 - [x] Complete a first training run and save a LoRA adapter
 - [x] Prepare an isolated second-experiment configuration that does not overwrite Experiment 001
-- [ ] Run Experiment 002 in Colab and inspect its held-out outputs
+- [x] Run Experiment 002 in Colab and download its adapter ZIP
+- [x] Add a persistent Base-vs-Adapter evaluation script
+- [x] Update the notebook to save evaluation results as JSON and Markdown
+- [ ] Run the persistent evaluation and inspect its held-out outputs
 - [ ] Add automated checks for the final saved adapter and inference setup
 
 ## Phase 2 — Pipis dataset
@@ -30,8 +33,8 @@
 - [x] Compare Base and Adapter on initial prompts
 - [x] Record known failures in docs/EXPERIMENT_001.md
 - [x] Define the held-out Base-vs-Adapter comparison flow for Experiment 002
-- [ ] Build a repeatable evaluation rubric and score outputs
-- [ ] Run the second experiment and record results in docs/EXPERIMENT_002.md
+- [x] Build a repeatable evaluation rubric and score outputs
+- [ ] Run the persistent evaluation and record results in docs/EXPERIMENT_002.md
 
 ## Phase 4 — Pipis 1.x+
 - [ ] Improve dataset quality based on measured evaluation failures
