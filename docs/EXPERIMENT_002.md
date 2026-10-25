@@ -2,7 +2,7 @@
 
 ## Status
 
-Prepared in GitHub; **not run yet**. The notebook now points to the current training and held-out evaluation JSONL files, checks that the training set has at least 100 rows, validates exact duplicates and train/eval overlap, and writes its outputs to separate experiment-002 paths.
+**Training completed by the user in Colab and the Experiment 002 adapter ZIP was downloaded.** Some notebook cell outputs later disappeared, so the full eight-prompt comparison is not available for review. The notebook was updated afterward to save the evaluation into downloadable JSON and Markdown files. The new persistence change has not yet been run by the user.
 
 ## Dataset
 
@@ -32,12 +32,19 @@ These are experimental settings, not a guarantee of better results. The first ad
 1. Open the notebook in a fresh Colab session and select a GPU runtime.
 2. Run all cells from top to bottom.
 3. Confirm dataset validation passes and reports 121 train rows and 8 evaluation rows.
-4. Review the Base and Adapter outputs for all eight held-out prompts.
-5. Download and preserve `pipis-6.7-exp002-adapter.zip` separately from the first ZIP.
-6. Record whether the new adapter improves factual accuracy, identity consistency, concise stopping, and uncertainty handling. Do not judge from loss alone.
+4. Preserve the already downloaded `pipis-6.7-exp002-adapter.zip` separately from the first ZIP.
+5. To recover a comparable evaluation without retraining, run the updated notebook's model-load/evaluation portion or use `scripts/evaluate_adapter.py` with the saved adapter and the held-out evaluation file.
+6. Download and preserve the resulting `results.json` and `results.md`. Record factual accuracy, identity consistency, concise stopping, and uncertainty handling. Do not judge from loss alone.
 
 ## Limitations
 
 - Eight evaluation examples are too few for strong generalization claims.
 - Dataset validation catches formatting, exact duplicates, and exact train/eval overlap; it does not prove every training answer is high quality.
 - Base model license and redistribution terms still need review before distributing model weights.
+
+
+## Persistent evaluation files
+
+- Script: `scripts/evaluate_adapter.py`
+- The notebook evaluation cell now writes `/content/pipis-6.7-exp002-evaluation.json` and `/content/pipis-6.7-exp002-evaluation.md`, then offers both for download.
+- This fix prevents the only copy of the comparison from existing solely in transient Colab cell output. It does not recover output that was already lost.
